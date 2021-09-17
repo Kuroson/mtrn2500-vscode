@@ -1,4 +1,14 @@
-# 1. Using code runner
+# 1. Info before reading
+
+**For linux/macos users only.**. All of them can be configured for windows however, you just need to change some of the command names etc
+
+I recommend using WSL2 Ubuntu if you are using Windows anyway.
+
+A decent guide made for CSE students can be found here: https://abiram.me/wsl-github. There are also many guides that can be found on Google.
+
+It is meant for COMP1511 students studying C. Some of the steps should be skipped/changed (e.g., install g++ instead of dcc).
+
+# 2. Using code runner
 
 Code runner is a great way of compile **single** file applications and running them automatically. Minor configuration is needed
 
@@ -37,13 +47,11 @@ An example of it being run:
 
 ![example](/images/simple-demo.PNG)
 
-# 2. Using vscode's inbuilt debugger and auto-building
-
-For linux/macos users only,
+# 3. Using vscode's inbuilt debugger and auto-building
 
 VSCode's F5 runs a compile command (located in `.vscode/task.json`) then runs the compiled program using gdb (config located in `.vscode/settings.json`). This is not ideal for running applications normally, however, we can setup the build command (`control+shift+b`).
 
-## 2.1. `task.json`
+## 3.1. `task.json`
 
 You first need to configure the `task.json` file that is located in your `.vscode` folder directory.
 
@@ -85,7 +93,7 @@ What it should look like when you run the build (`control+shift+b`):
 
 ![](/images/task-build.PNG)
 
-## 2.2. `launch.json`
+## 3.2. `launch.json`
 
 For the debug program (`.vscode/launch.json`), I use
 
