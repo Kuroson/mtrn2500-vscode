@@ -19,11 +19,11 @@ You will want to include the following values in your `.vscode/settings.json` (e
 }
 ```
 
-An example:
+The first line ensures that code is run inside your integrated terminal (rather then some vscode terminal where you cant type anything to STDIN). I have also formatted it to be a bit colourful and descriptive. It also removes the compiled file as well.
+
+An example of it running:
 
 ![example](/images/fancier-version.PNG)
-
-The first line ensures that code is run inside your integrated terminal (rather then some vscode terminal where you cant type anything to STDIN). I have also formatted it to be a bit colourful and descriptive. It also removes the compiled file as well.
 
 The simple version:
 
@@ -43,7 +43,7 @@ For linux/macos users only,
 
 VSCode's F5 runs a compile command (located in `.vscode/task.json`) then runs the compiled program using gdb (config located in `.vscode/settings.json`). This is not ideal for running applications normally, however, we can setup the build command (`control+shift+b`).
 
-## 2.1. `task.json
+## 2.1. `task.json`
 
 You first need to configure the `task.json` file that is located in your `.vscode` folder directory.
 
