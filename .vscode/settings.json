@@ -1,0 +1,6 @@
+{
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "cpp": "clear && echo \"$(tput setaf 2)$(tput bold)Running$(tput setaf 1) $fileName$(tput setaf 2). Compiling using g++ -std=c++14$(tput sgr0)\" && cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out && rm $fileNameWithoutExt.out"
+  }
+}
