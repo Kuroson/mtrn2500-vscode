@@ -19,13 +19,31 @@ You will want to include the following values in your `.vscode/settings.json` (e
 }
 ```
 
+An example:
+
+![example](/images/fancier-version.PNG)
+
 The first line ensures that code is run inside your integrated terminal (rather then some vscode terminal where you cant type anything to STDIN). I have also formatted it to be a bit colourful and descriptive. It also removes the compiled file as well.
+
+The simple version:
+
+```json
+{
+  "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out"
+}
+```
+
+An example of it being run:
+
+![example](/images/simple-demo.PNG)
 
 # 2. Using vscode's inbuilt debugger and auto-building
 
 For linux/macos users only,
 
 VSCode's F5 runs a compile command (located in `.vscode/task.json`) then runs the compiled program using gdb (config located in `.vscode/settings.json`). This is not ideal for running applications normally, however, we can setup the build command (`control+shift+b`).
+
+## 2.1. `task.json
 
 You first need to configure the `task.json` file that is located in your `.vscode` folder directory.
 
@@ -62,6 +80,12 @@ The important stuff to understand is:
 - `isDefault`: when you use `control+shift+b`, it will automatically run this task since its default. You can turn this off if you have multiple builds
 
 NOTE: I changed the compiled output to have a `*.out`, so i can easily .gitignore it all
+
+What it should look like when you run the build (`control+shift+b`):
+
+![](/images/task-build.PNG)
+
+## 2.2. `launch.json`
 
 For the debug program (`.vscode/launch.json`), I use
 
@@ -104,3 +128,7 @@ The most important values to note are:
 - `preLaunchTask`: name has to match your task.json `label` value
 
 By using F5, it will automatically compile your file and run it using gdb. You can add breakpoints on vscode (click the LHS of line numbers), and it will stop at those places.
+
+What it should look like when run using `F5`,
+
+![example](/images/debug-example.PNG)
